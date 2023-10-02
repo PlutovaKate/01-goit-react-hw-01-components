@@ -4,12 +4,12 @@ import PropTypes from 'prop-types';
 const FriendList = ({ friends }) => {
   return (
     <div>
-      {friends.map(friend => (
+      {friends.map(({ avatar, name, isOnline, id }) => (
         <FriendListItem
-          avatar={friend.avatar}
-          name={friend.name}
-          isOnline={friend.isOnline}
-          key={friend.id}
+          avatar={avatar}
+          name={name}
+          isOnline={isOnline}
+          key={id}
         />
       ))}
     </div>
@@ -17,12 +17,12 @@ const FriendList = ({ friends }) => {
 };
 
 FriendList.propTypes = {
-  friend: PropTypes.arrayOf(
+  friends: PropTypes.arrayOf(
     PropTypes.shape({
+      id: PropTypes.number.isRequired,
       avatar: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,
       isOnline: PropTypes.bool.isRequired,
-      key: PropTypes.number.isRequired,
     })
   ).isRequired,
 };
