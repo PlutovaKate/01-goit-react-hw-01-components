@@ -1,7 +1,11 @@
 import Users from './Users/users.jsx';
-import user from '../user.json';
+import user from '../data/user.json';
 import Statistics from './Statistics/Statistics.jsx';
-import data from '../data.json';
+import data from '../data/data.json';
+import FriendList from './FriendList/FriendList.jsx';
+import friends from '../data/friends.json';
+import TransactionHistory from './TransactionHistory/TransactionHistory.jsx';
+import transactions from '../data/transactions.json';
 
 export const App = () => {
   return (
@@ -15,13 +19,9 @@ export const App = () => {
         views={user.stats.views}
         likes={user.stats.likes}
       />
-
-      <Statistics title="Upload stats" stats={data} />
-      <Statistics
-        stats={data}
-        label={data[0].label}
-        percentage={data[0].percentage}
-      />
+      <Statistics stats={data} />
+      <FriendList friends={friends} />
+      <TransactionHistory items={transactions} />
     </div>
   );
 };

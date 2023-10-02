@@ -15,9 +15,15 @@
 }
 
 .item {
+  display: block;
   border: 1px solid #222222;
   background-color: beige;
   padding: 10px;
   width: 100px;
   list-style: none;
+  text-align: center;
+}
+.label {
+  display: block;
+  margin-bottom: 10px;
 }
